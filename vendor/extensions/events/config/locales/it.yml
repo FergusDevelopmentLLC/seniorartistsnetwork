@@ -1,0 +1,45 @@
+it:
+  refinery:
+    plugins:
+      events:
+        title: Events
+    events:
+      admin:
+        events:
+          actions:
+            create_new: Aggiungi Nuovo Event
+            reorder: Riordina Events
+            reorder_done: Termina il Riordino di Events
+          records:
+            title: Events
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Events. Clicca "Aggiungi Nuovo Event" per aggiungere il tuo primo event.
+          event:
+            view_live_html: Guarda live questo event <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo event
+            delete: Rimuovi per sempre questo event
+      events:
+        show:
+          other: Altri Events
+  activerecord:
+    attributes:
+      'refinery/events/event':
+        active: Active
+        artist_name: Artist Name
+        intro: Intro
+        title: Title
+        description: Description
+        extended_description: Extended Description
+        photo: Photo
+        image_tag_line: Image Tag Line
+        start_date: Start Date
+        end_date: End Date
+        hours: Hours
+        address1: Address1
+        address2: Address2
+        address3: Address3
+        city: City
+        state: State
+        zip_code: Zip Code
+        phone_number: Phone Number
+        website: Website

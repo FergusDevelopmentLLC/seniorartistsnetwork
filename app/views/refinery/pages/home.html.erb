@@ -1,0 +1,104 @@
+<!--<% if (@page.images != nil and @page.images.count > 1) then %>-->
+<!--<div class="cycle-slideshow"-->
+     <!--data-cycle-pause-on-hover="true"-->
+     <!--data-cycle-speed="100">-->
+  <!--<% @page.images.each do |image| %>-->
+      <!--<%= image_tag(image.thumbnail(geometry: "450x350#c").url) %>-->
+  <!--<% end %>-->
+<!--</div>-->
+<!--<%end%>-->
+<!--<div id="body-top">-->
+  <!--<%=raw @page.content_for(:top) %>-->
+<!--</div>-->
+<!--<hr />-->
+<!--<div id="body-bottom">-->
+  <!--<img src="/assets/37_ageless_board.png" alt="Art is ageless"/>-->
+  <!--<%=raw @page.content_for(:bottom) %>-->
+<!--</div>-->
+<style>
+    #content-container { padding: 0 0 20px 0; width: 900px; }
+
+    .cycle-slideshow
+    {
+        margin: 0 !important;
+    }
+
+    .cycle-slideshow {
+        width: 450px;
+        height: 300px;
+        float: left;
+        margin: 0;
+    }
+
+    #san img#art-is-ageless { float:right; margin: 0 0px 10px 10px; }
+    #board li img { width:50px; height:50px; outline:1px solid #ccc; margin:0 10px 0 0; padding:0; float:left; }
+    #board li { list-style-type:none; line-height: 50px;}
+    #board li * { vertical-align: middle}
+
+    #san, #board, #recruiting {margin: 20px 20px 0 20px; }
+
+    #recruiting p {text-align: center;}
+
+    /*.style-caption { outline: 1px solid blue; }*/
+
+
+</style>
+<div class="grid">
+  <div class="col-1-2">
+    <div class="cycle-slideshow" data-cycle-pause-on-hover="true" data-cycle-speed="50">
+      <% @page.images.each do |image| %>
+          <%= image_tag(image.thumbnail(geometry: "450x300#c").url) %>
+      <% end %>
+      <!--<img alt="Slide-show-04" src="/system/images/W1siZiIsIjIwMTQvMDUvMTIvMjAvNTkvNTgvNjcxL3NsaWRlX3Nob3dfMDQucG5nIl0sWyJwIiwidGh1bWIiLCI0MDB4Mjc1I2MiXSxbInAiLCJzdHJpcCJdXQ/slide-show-04.png" />-->
+      <!--<img alt="Slide-show-03" src="/system/images/W1siZiIsIjIwMTQvMDUvMTIvMjAvNTkvNDgvNDQ5L3NsaWRlX3Nob3dfMDMucG5nIl0sWyJwIiwidGh1bWIiLCI0MDB4Mjc1I2MiXSxbInAiLCJzdHJpcCJdXQ/slide-show-03.png" />-->
+      <!--<img alt="Slide-show-02" src="/system/images/W1siZiIsIjIwMTQvMDUvMTIvMjAvNTkvMzcvNzc5L3NsaWRlX3Nob3dfMDIucG5nIl0sWyJwIiwidGh1bWIiLCI0MDB4Mjc1I2MiXSxbInAiLCJzdHJpcCJdXQ/slide-show-02.png" />-->
+      <!--<img alt="Slide-show-01" src="/system/images/W1siZiIsIjIwMTQvMDUvMTIvMjAvNTkvMjYvODI1L3NsaWRlX3Nob3dfMDEucG5nIl0sWyJwIiwidGh1bWIiLCI0MDB4Mjc1I2MiXSxbInAiLCJzdHJpcCJdXQ/slide-show-01.png" />-->
+    </div>
+  </div>
+  <div class="col-1-2">
+    <div id="featured-artist">
+      <%=raw @page.content_for(:featured_artist) %>
+      <!--<div>-->
+      <!--<img src="/system/images/W1siZiIsIjIwMTQvMDUvMTYvMTEvMTQvNTYvNzM2L2xhcnJ5X2NoYWl0LnBuZyJdXQ/larry-chait.png" title="Larry Chait" alt="Larry Chait">-->
+      <!--<span class="style-caption">Larry Chait, by Alan Leder</span>-->
+      <!--</div>-->
+      <!--<h2>Featured Artist</h2>-->
+      <!--<h3>Larry Chait, Photographer</h3>-->
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+  <div class="col-5-8">
+    <div id="san">
+      <%=raw @page.content_for(:san_description) %>
+      <!--<img src="/assets/37_ageless_board.png" alt="Art is ageless" id="art-is-ageless">-->
+      <!--<p>The <strong>Senior Artists Network</strong> is a not-for-profit, tax-exempt organization committed to promoting and fostering the talents of Chicago-area artists age 50 or older. Welcome to our site. This is just a place holder page while we gather our content.</p>-->
+      <!--<p>SAN is operated by a volunteer board representing a diverse membership from all ethnic and racial backgrounds.</p>-->
+      <!--<p><strong>SAN Membership Benefits</strong>-->
+      <!--</p>-->
+      <!--<ol><li>Exhibit in the Annual Members Show, enter the juried Later Impressions exhibition, as well as various smaller exhibitions we organize around the Chicago area.</li>-->
+      <!--<li>Participate in membership social and educational programs, including the annual SAN Symposium.</li>-->
+      <!--</ol>-->
+    </div>
+
+  </div>
+  <div class="col-3-8">
+    <div id="board">
+      <%=raw @page.content_for(:board_members) %>
+      <!--<h2>SAN Board Members</h2>-->
+      <!--<ul><li><img src="/system/images/W1siZiIsIjIwMTQvMDUvMjkvMTMvNDcvMTQvOTYwL2FiYWppYW5fNTBfNTAucG5nIl1d/abajian-50-50.png" alt="Annette Abajian">Annette Abajian - President</li>-->
+      <!--<li><img src="/system/images/W1siZiIsIjIwMTQvMDUvMjkvMTQvMjEvMzQvMTIwL2R5dGNoXzUwXzUwLnBuZyJdXQ/dytch-50-50.png" alt="Meredith Dytch">Meredith Dytch - Vice President</li>-->
+      <!--<li><img src="/system/images/W1siZiIsIjIwMTQvMDUvMjkvMTMvNDcvNTAvNTUvY2hhaXRfNTBfNTAucG5nIl1d/chait-50-50.png" alt="Larry Chait">Larry Chait - Secretary</li>-->
+      <!--<li><img src="/system/images/W1siZiIsIjIwMTQvMDUvMjgvMTYvMjIvNDcvNDAvcHJvZmlsZV81MF81MC5wbmciXV0/profile-50-50.png" alt="Beverly Alice Nash">Beverly Alice Nash - Treasurer</li>-->
+      <!--<li><img src="/system/images/W1siZiIsIjIwMTQvMDUvMjkvMTMvNDcvMjYvNjg4L2Jlc3RlXzUwXzUwLnBuZyJdXQ/beste-50-50.png" alt="Kathi Beste"> Kathi Beste - Communications</li>-->
+      <!--<li><img src="/system/images/W1siZiIsIjIwMTQvMDUvMjkvMTMvNDcvMzgvODQxL2NhbnRlbGVfNTBfNTAucG5nIl1d/cantele-50-50.png" alt="Chris Cantele">Chris Cantele - Development</li>-->
+      <!--</ul>-->
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+  <div id="recruiting">
+    <%=raw @page.content_for(:recruiting) %>
+    <!--<p>-->
+      <!--We are also recruiting for volunteers to assist with development, fundraising, membership, and community partnerships.<br>Volunteers / Board Members-at-Large: Catherine Cajandig, Howard Frank, Catherine Keebler, Patricia O'Malley.-->
+    <!--</p>-->
+  </div>
+</div>

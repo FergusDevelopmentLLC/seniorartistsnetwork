@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      members:
+        title: Members
+    members:
+      admin:
+        members:
+          actions:
+            create_new: Yeni Ekle Member
+            reorder: Tekrar sirala Members
+            reorder_done: Tekrar siralama tamamlandiMembers
+          records:
+            title: Members
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Members yok henuz.  Tikla "Yeni Ekle Member" eklemek senin ilk member.
+          member:
+            view_live_html: Bunu canlu member goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle member
+            delete: Bunu Sil member sonsuza dek
+      members:
+        show:
+          other: Diger Members
+  activerecord:
+    attributes:
+      'refinery/members/member':
+        firstname: Firstname
+        lastname: Lastname
+        photo: Photo
+        bio: Bio

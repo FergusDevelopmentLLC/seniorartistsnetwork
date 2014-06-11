@@ -1,0 +1,18 @@
+<% if (@page.images != nil and @page.images.count > 0) then %>
+    <div class="cycle-slideshow"
+         data-cycle-pause-on-hover="true"
+         data-cycle-speed="100">
+      <% @page.images.each do |image| %>
+          <%= image_tag(image.thumbnail(geometry: "430x285#c").url) %>
+      <% end %>
+    </div>
+    <div>
+      <h2><%=raw @page.title %></h2>
+      <%=raw @page.content_for(:body) %>
+    </div>
+<%else%>
+    <div>
+      <h1><%=raw @page.title %></h1>
+      <%=raw @page.content_for(:body) %>
+    </div>
+<%end%>

@@ -1,0 +1,45 @@
+<% content_for :body do %>
+  <div id="events">
+    <% @events.each do |event| %>
+        <div class="event">
+        <% if (!event.photo.nil? and !event.photo.blank?) then %>
+            <div class="event-image">
+            <img src='<%= event.photo.url %>'/>
+            <% if (!event.image_tag_line.nil? and !event.image_tag_line.blank?) %>
+              <br/><span class='style-caption'><%= event.image_tag_line %></span>
+            <% end %>
+            </div>
+        <% end %>
+        <h3><%=event.title%></h3>
+        <% if (!event.artist_name.nil? and !event.artist_name.blank?) then %><span class="color-purple">By SAN Artist <%=event.artist_name%></span><br/><%end%>
+        <% if (!event.hide_start_end_date) then %>
+            <% if (!event.start_date.nil? and !event.start_date.blank?) then %><span class="color-purple"><%=Date::MONTHNAMES[event.start_date.month]%> <%=event.start_date.day%>, <%=event.start_date.year%> <% if (!event.end_date.nil? and !event.end_date.blank?) then %> through <%=Date::MONTHNAMES[event.end_date.month]%> <%=event.end_date.day%>, <%=event.end_date.year%><%end%></span><%end%>
+        <%end%>
+        <%=raw event.description %>
+        <p>
+            <% if (!event.address1.nil? and !event.address1.blank?) then %><%=event.address1%><br/><% end %>
+            <% if (!event.address2.nil? and !event.address2.blank?) then %><%=event.address2%><br/><% end %>
+            <% if (!event.address3.nil? and !event.address3.blank?) then %><%=event.address3%><br/><% end %>
+            <% if (!event.city.nil? or !event.city.blank? or !event.state.nil? or !city.state.blank? or !event.zip_code.nil? or !city.zip_code.blank?) then %>
+                <% if (!event.city.nil? and !event.city.blank?) then %><%=event.city%>, <% end %><% if (!event.state.nil? and !event.state.blank?) then %><%=event.state%> <% end %><% if (!event.zip_code.nil? and !event.zip_code.blank?) then %><%=event.zip_code%><% end %><br/>
+            <% end %>
+            <% if (!event.phone_number.nil? and !event.phone_number.blank?) then %><%=event.phone_number%><br/><% end %>
+            <% if (!event.website.nil? and !event.website.blank?) then %><a href='<%=event.website%>'><%=event.website%></a><br/><% end %>
+        </p>
+
+        <% if (!event.hours.nil? and !event.hours.blank?) then %><%=raw event.hours%><% end %>
+        <div class="clear"></div>
+        <% if (!event.extended_description.nil? and !event.extended_description.blank?) then %>
+        <div style="margin-top:30px">
+        <%=raw event.extended_description %>
+        </div>
+        <% end %>
+        <!--<li>-->
+        <!--<%= link_to event.title, refinery.events_event_path(event) %>-->
+        <!--</li>-->
+        </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= render '/refinery/content_page' %>

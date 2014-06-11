@@ -1,0 +1,9 @@
+.field select {
+    border: 1px solid #7f9db9;
+    padding: 0.4% 0.5%;
+    line-height: 20px;
+}
+
+.field input.text-short {
+    width: 100px;
+}

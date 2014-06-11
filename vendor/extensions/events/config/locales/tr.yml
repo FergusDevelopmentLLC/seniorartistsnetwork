@@ -1,0 +1,45 @@
+tr:
+  refinery:
+    plugins:
+      events:
+        title: Events
+    events:
+      admin:
+        events:
+          actions:
+            create_new: Yeni Ekle Event
+            reorder: Tekrar sirala Events
+            reorder_done: Tekrar siralama tamamlandiEvents
+          records:
+            title: Events
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Events yok henuz.  Tikla "Yeni Ekle Event" eklemek senin ilk event.
+          event:
+            view_live_html: Bunu canlu event goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle event
+            delete: Bunu Sil event sonsuza dek
+      events:
+        show:
+          other: Diger Events
+  activerecord:
+    attributes:
+      'refinery/events/event':
+        active: Active
+        artist_name: Artist Name
+        intro: Intro
+        title: Title
+        description: Description
+        extended_description: Extended Description
+        photo: Photo
+        image_tag_line: Image Tag Line
+        start_date: Start Date
+        end_date: End Date
+        hours: Hours
+        address1: Address1
+        address2: Address2
+        address3: Address3
+        city: City
+        state: State
+        zip_code: Zip Code
+        phone_number: Phone Number
+        website: Website

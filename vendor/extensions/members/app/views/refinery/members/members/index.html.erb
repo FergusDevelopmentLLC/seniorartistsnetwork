@@ -1,0 +1,90 @@
+<!--<%= form_tag refinery.members_members_path, :method => 'get' do %>-->
+    <!--<div class="form-search">-->
+    <!--<span><%=text_field_tag :search, params[:search], class: "search", placeholder: "Member name" %></span>-->
+    <!--<span><%=submit_tag "Search", :name => nil%></span>-->
+    <!--</div>-->
+<!--<% end %>-->
+<div id="featured-artist-detail" class="shadow">
+    <%=raw @page.content_for(:featured_artist) %>
+
+  <!--<img src="/system/images/W1siZiIsIjIwMTQvMDUvMTYvMTUvMzYvMjYvOTI5L2xhcnJ5X2NoYWl0XzQwMF81OTEucG5nIl1d/larry-chait-400-591.png" title="Larry Chait" alt="Larry Chait" data-rel="225x255" width="250" class="image-align-left" />-->
+  <!--<h2>Featured Artist</h2>-->
+  <!--<h3>Larry Chait - Photographer</h3>-->
+  <!--<p>Larry Chait grew up in Iowa and Kansas. Despite a strong childhood interest in art, he decided to pursue a career as a research scientist. Throughout college and graduate school, he continued to draw and paint in his spare time. With the advent of digital photography in the late ‘90’s, Larry’s interest in photography was renewed, and since 2002 he has devoted himself full-time to developing his photographic vision. In 2003 he earned a Certificate in Digital Photography from Columbia College, Chicago. His work is held in numerous public and private collections and has been exhibited throughout the U.S.</p>-->
+  <!--<div>-->
+    <!--<table>-->
+      <!--<tbody>-->
+      <!--<tr>-->
+        <!--<td><a href="/system/images/W1siZiIsIjIwMTQvMDUvMTYvMTUvMjgvMjIvODc4L3NwaGVyZTQxXzgwMF84MDAucG5nIl1d/sphere41-800-800.png"><img src="/system/images/W1siZiIsIjIwMTQvMDUvMTYvMTUvMjgvMDkvNDM5L3NwaGVyZTQxXzIwMF8yMDAucG5nIl1d/sphere41-200-200.png" title="Sphere 41" alt="Sphere 41" width="165" height="165" /></a>-->
+        <!--</td>-->
+        <!--<td><a href="/system/images/W1siZiIsIjIwMTQvMDUvMTYvMTUvMjkvMDAvNzE3L3NwaGVyZTQ3XzgwMF84MDAucG5nIl1d/sphere47-800-800.png"><img src="/system/images/W1siZiIsIjIwMTQvMDUvMTYvMTUvMjgvNDUvODgwL3NwaGVyZTQ3XzIwMF8yMDAucG5nIl1d/sphere47-200-200.png" title="Sphere 47" alt="Sphere 47" data-rel="225x255" width="165" height="165" /></a>-->
+        <!--</td>-->
+        <!--<td><a href="/system/images/W1siZiIsIjIwMTQvMDUvMTYvMTUvMjkvMjYvMTUzL3NwaGVyZTc3XzgwMF84MDAucG5nIl1d/sphere77-800-800.png"><img src="/system/images/W1siZiIsIjIwMTQvMDUvMTYvMTUvMjkvMTMvNDA3L3NwaGVyZTc3XzIwMF8yMDAucG5nIl1d/sphere77-200-200.png" title="Sphere 77" alt="Sphere 77" data-rel="225x255" width="165" height="165" class="selected_by_wym" /></a>-->
+        <!--</td>-->
+      <!--</tr>-->
+      <!--</tbody>-->
+    <!--</table>-->
+  <!--</div>-->
+
+</div>
+<div class="clear"></div>
+<div id='members-list'>
+    <h1>SAN Members</h1>
+    <% if @members.count == 0 %>
+    <p id="no-data-to-display">No members to display.</p>
+    <% else %>
+    <div class="member-grid">
+        <% @members.each do |member| %>
+        <%if !(member.bio == nil) && !(member.bio.blank?)%>
+        <div class="col-1-8 has-tooltip">
+        <%else%>
+        <div class="col-1-8">
+        <%end%>
+            <div class="img-container">
+            <% if (member.photo != nil) then %>
+                <% if (member.detail_photo != nil) then %>
+                    <a href='<%= member.detail_photo.url %>'><img src='<%= member.photo.url %>' alt='<%= member.full_name %>'/></a>
+                <% else %>
+                    <img src='<%= member.photo.url %>' alt='<%= member.full_name %>'/>
+                <% end %>
+            <%else%>
+                <img src='/assets/san-100-100.png' alt="Senior Artists Network"/>
+            <% end %>
+            </div>
+            <div class="member-name">
+            <% if (!member.url.nil? and !member.url.blank?) then %>
+                <%= link_to member.full_name, member.url %>
+            <% else %>
+                <%= member.full_name%>
+            <% end %>
+            </div>
+        </div>
+        <div class="hidden"><%=raw member.bio%></div>
+        <% end %>
+    </div>
+    <% end %>
+</div>
+<%=will_paginate @members, renderer: PaginationListLinkRenderer %>
+<script type="text/javascript">
+    (function ($) {//so i can use $ inside
+
+        $(function() {//document.ready
+            $('.has-tooltip').each(function() { // Notice the .each() loop, discussed below
+                $(this).qtip({
+                    content: {
+                        text: $(this).next('div') // Use the "div" element next to this for the content
+                    },
+                    style: {
+                        classes: 'qtip'
+                    },
+                    position: {
+                        my: 'left center',  // Position my top left...
+                        at: 'right center', // at the bottom right of...
+                        target: $(this) // my target
+                    }
+                });
+            });
+        });
+
+    }(jQuery));
+</script>

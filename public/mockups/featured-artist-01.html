@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Senior Artists Network</title>
+    <link data-turbolinks-track="true" href="/assets/refinery/formatting.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link data-turbolinks-track="true" href="/assets/refinery/theme.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link data-turbolinks-track="true" href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link data-turbolinks-track="true" href="/assets/core.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link data-turbolinks-track="true" href="/assets/main-navigation.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link data-turbolinks-track="true" href="/assets/theme.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link data-turbolinks-track="true" href="/assets/main-navigation.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link data-turbolinks-track="true" href="/assets/core.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <script data-turbolinks-track="true" src="/assets/jquery.js?body=1" type="text/javascript"></script>
+    <script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+    <script data-turbolinks-track="true" src="/assets/admin.js?body=1" type="text/javascript"></script>
+    <script data-turbolinks-track="true" src="/assets/jquery.cycle2.js?body=1" type="text/javascript"></script>
+    <script data-turbolinks-track="true" src="/assets/refinery/admin.js?body=1" type="text/javascript"></script>
+    <script data-turbolinks-track="true" src="/assets/refinery/boot_wym.js?body=1" type="text/javascript"></script>
+    <script data-turbolinks-track="true" src="/assets/refinery/wymeditor.js?body=1" type="text/javascript"></script>
+    <script data-turbolinks-track="true" src="/assets/application.js?body=1" type="text/javascript"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="SjDAttYSEehgkxNLe/vCv4z8EDmFQB2dDS3pkLWfY+Y=" name="csrf-token" />
+
+    <style>
+        #content-container { padding: 0; width: 900px; }
+
+        .cycle-slideshow
+        {
+            margin: 0 !important;
+        }
+
+
+        [class*='col-'] {
+            float: left;
+            /*outline: 1px solid green;*/
+        }
+
+        [class*='col-'] div {
+            padding:0px;
+        }
+
+        [class*='col-1-2'] {
+            width: 50%;
+        }
+
+        .grid:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        #board img#art-is-ageless { float:right; }
+        #board li img { width:50px; border:1px solid #000; margin-right:5px; }
+        #board li { list-style-type:none; }
+        #board li * { vertical-align: middle}
+
+        #san, #board, #recruiting {margin: 20px}
+        #featured-artist {margin: 10px}
+        #recruiting {text-align: center}
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+
+        <h1>
+            <img src="/assets/130_sm_SANlogo.jpg"> Senior Artists Network
+        </h1>
+    </div>
+    <div id="navigation">
+        <nav class="menu clearfix" id="main-navigation"><ul><li class="selected first"><a href="/">Home</a></li><li><a href="/events">News and Events</a></li><li><a href="/volunteer">Volunteer</a></li><li><a href="/members">Members</a></li><li><a href="/donate">Donate</a></li><li class="last"><a href="/contacts/new">Contact Us</a></li></ul></nav>
+    </div>
+    <div id="content-container">
+        <div class="grid">
+            <div class="col-1-2">
+                <div id="featured-artist">
+                    <h2>Featured Artist</h2>
+                </div>
+            </div>
+            <div class="col-1-2" style="background-color: yellow">
+
+                <div class="cycle-slideshow"
+                     data-cycle-pause-on-hover="true"
+                     data-cycle-speed="100">
+                    <img alt="Slide-show-04" src="/system/images/W1siZiIsIjIwMTQvMDUvMTIvMjAvNTkvNTgvNjcxL3NsaWRlX3Nob3dfMDQucG5nIl0sWyJwIiwidGh1bWIiLCI0MDB4Mjc1I2MiXSxbInAiLCJzdHJpcCJdXQ/slide-show-04.png" />
+                    <img alt="Slide-show-03" src="/system/images/W1siZiIsIjIwMTQvMDUvMTIvMjAvNTkvNDgvNDQ5L3NsaWRlX3Nob3dfMDMucG5nIl0sWyJwIiwidGh1bWIiLCI0MDB4Mjc1I2MiXSxbInAiLCJzdHJpcCJdXQ/slide-show-03.png" />
+                    <img alt="Slide-show-02" src="/system/images/W1siZiIsIjIwMTQvMDUvMTIvMjAvNTkvMzcvNzc5L3NsaWRlX3Nob3dfMDIucG5nIl0sWyJwIiwidGh1bWIiLCI0MDB4Mjc1I2MiXSxbInAiLCJzdHJpcCJdXQ/slide-show-02.png" />
+                    <img alt="Slide-show-01" src="/system/images/W1siZiIsIjIwMTQvMDUvMTIvMjAvNTkvMjYvODI1L3NsaWRlX3Nob3dfMDEucG5nIl0sWyJwIiwidGh1bWIiLCI0MDB4Mjc1I2MiXSxbInAiLCJzdHJpcCJdXQ/slide-show-01.png" />
+                </div>
+            </div>
+            <div style="clear:both"></div>
+            <div class="col-1-2">
+                <div id="san">
+                    <p>The <strong>Senior Artists Network</strong> is a not-for-profit, tax-exempt organization committed to promoting and fostering the talents of Chicago-area artists age 50 or older. Welcome to our site. This is just a place holder page while we gather our content.</p>
+                    <p>SAN is operated by a volunteer board representing a diverse membership from all ethnic and racial backgrounds.</p>
+                    <p><strong>SAN Membership Benefits</strong>
+                    </p>
+                    <ol><li>Exhibit in the Annual Members Show, enter the juried Later Impressions exhibition, as well as various smaller exhibitions we organize around the Chicago area.</li>
+                        <li>Participate in membership social and educational programs, including the annual SAN Symposium.</li>
+                    </ol>
+                </div>
+
+
+            </div>
+            <div class="col-1-2">
+                <div id="board">
+                    <img src="/assets/37_ageless_board.png" alt="Art is ageless" id="art-is-ageless"/>
+                    <h2>SAN Board Members</h2>
+                    <ul>
+                        <li><img src="images/generic-profile.png" alt="Annette Abajian"/> Annette Abajian - President</li>
+                        <li><img src="images/generic-profile.png" alt="Meredith Dytch"/> Meredith Dytch - Vice President</li>
+                        <li><img src="images/generic-profile.png" alt="Larry Chait"/> Larry Chait - Secretary</li>
+                        <li><img src="images/generic-profile.png" alt="Beverly Alice Nash"/> Beverly Alice Nash - Treasurer</li>
+                        <li><img src="images/generic-profile.png" alt="Kathi Beste"/> Kathi Beste - Communications</li>
+                        <li><img src="images/generic-profile.png" alt="Chris Cantele"/> Chris Cantele - Development</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="recruiting">
+            <p>
+                We are also recruiting for volunteers to assist with development, fundraising, membership, and community partnerships.<br/>
+                Volunteers / Board Members-at-Large: Catherine Cajandig, Howard Frank, Catherine Keebler, Patricia O'Malley.
+            </p>
+        </div>
+    </div>
+    <div id="footer">
+        <p>
+            Copyright &copy; 2014 Senior Artists&#x27; Network
+        </p>
+    </div>
+</div>
+
+
+
+<script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+<script src="/assets/admin.js?body=1" type="text/javascript"></script>
+<script src="/assets/jquery.cycle2.js?body=1" type="text/javascript"></script>
+<script src="/assets/refinery/admin.js?body=1" type="text/javascript"></script>
+<script src="/assets/refinery/boot_wym.js?body=1" type="text/javascript"></script>
+<script src="/assets/refinery/wymeditor.js?body=1" type="text/javascript"></script>
+<script src="/assets/application.js?body=1" type="text/javascript"></script>
+
+
+</body>
+</html>
